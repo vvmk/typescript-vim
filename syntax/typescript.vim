@@ -133,6 +133,9 @@ syntax keyword typescriptReserved constructor declare as interface module abstra
   syn match typescriptFunction "(super\s*|constructor\s*)" contained nextgroup=typescriptVars
   syn region typescriptVars start="(" end=")" contained contains=typescriptParameters transparent keepend
   syn match typescriptParameters "([a-zA-Z0-9_?.$][\w?.$]*)\s*:\s*([a-zA-Z0-9_?.$][\w?.$]*)" contained skipwhite
+  " vvmk
+  syn match typescriptExplicitType "\v:\s*[A-Z]\w*\ze(,|;|\s*\=|\[|\<|\)|\s*\{|\[\])"
+
 "}}}
 " DOM2 Objects"{{{
   syntax keyword typescriptType DOMImplementation DocumentFragment Node NodeList NamedNodeMap CharacterData Attr Element Text Comment CDATASection DocumentType Notation Entity EntityReference ProcessingInstruction void any string boolean number symbol never object
@@ -317,6 +320,9 @@ if version >= 508 || !exists("did_typescript_syn_inits")
 
   HiLink typescriptNumber Number
   HiLink typescriptPropietaryObjects Constant
+
+  " vvmk
+  HiLink typescriptExplicitType Function
 
   delcommand HiLink
 endif
