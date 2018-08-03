@@ -134,7 +134,7 @@ syntax keyword typescriptReserved constructor declare as interface module abstra
   syn region typescriptVars start="(" end=")" contained contains=typescriptParameters transparent keepend
   syn match typescriptParameters "([a-zA-Z0-9_?.$][\w?.$]*)\s*:\s*([a-zA-Z0-9_?.$][\w?.$]*)" contained skipwhite
   " vvmk
-  syn match typescriptExplicitType "\v:\s*[A-Z]\w*\ze(,|;|\s*\=|\[|\<|\)|\s*\{|\[\])"
+  syn match typescriptExplicitType "\v:\s*[A-Z]\w*\ze(,|;|\n|\s*\=|\[|\<|\>|\)|\s*\{|\[\])"
 
 "}}}
 " DOM2 Objects"{{{
